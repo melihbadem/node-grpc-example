@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service NewsService {
+    rpc GetAllNews (Empty) returns (NewsList);
+    rpc AddNews (News) returns (News);
+}
+
+message News {
+    string id = 1;
+    string title = 2;
+    string body = 3;
+    string postImage = 4;
+}
+
+message Empty { }
+
+message NewsList {
+    repeated News news = 1;
+}
